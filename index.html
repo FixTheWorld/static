@@ -5,25 +5,20 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
 	<title>Title</title>
 	<style>
-		html,body{
-			height:1000px;
-		}
-		.cj-header{
-			position:fixed;
-			background-color: aqua;
-			width: 100%;
-			top:0;
-			left:0;
-			z-index:3;
-		}
 	</style>
 </head>
 <body>
-<header class="cj-header">
-	123
-</header>
-<div style="margin-top: 100px;">
-	12312
-</div>
+	<label for="input1">capture="camera"</label>
+	<input id="input1" multiple onchange="preview(e);" type="file" capture="camera" />
+
+	<label for="input2">accept='image / *;capture=camera'</label>
+	<input id="input2" multiple onchange="preview(e);" type="file" accept="image/*;capture=camera" />
+	<div id="output"></div>
+<script type="text/javascript">
+	function preview(e){
+		const file=e.target.files;
+		document.querySelector('#output').innerHTML=file;
+	}
+</script>
 </body>
 </html>
