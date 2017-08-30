@@ -9,10 +9,10 @@
 </head>
 <body>
 	<label for="input1">capture="camera"</label>
-	<input id="input1" multiple onchange="preview(e);" type="file" capture="camera" />
+	<input id="input1" multiple onchange="preview(event);" type="file" capture="camera" />
 
 	<label for="input2">accept='image / *;capture=camera'</label>
-	<input id="input2" multiple onchange="preview(e);" type="file" accept="image/*;capture=camera" />
+	<input id="input2" multiple onchange="preview(event);" type="file" accept="image/*;capture=camera" />
 	<div id="output"></div>
 	<img id="img" src="" />
 <script type="text/javascript">
@@ -29,8 +29,6 @@
 			output.innerHTML=this.result;
 		};
 	}
-
-
 </script>
 </body>
 </html>
