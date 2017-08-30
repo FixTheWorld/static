@@ -14,11 +14,23 @@
 	<label for="input2">accept='image / *;capture=camera'</label>
 	<input id="input2" multiple onchange="preview(e);" type="file" accept="image/*;capture=camera" />
 	<div id="output"></div>
+	<img id="img" src="" />
 <script type="text/javascript">
 	function preview(e){
-		const file=e.target.files;
-		document.querySelector('#output').innerHTML=file;
+		const file=e.target.files[0];
+		const output=document.querySelector('#output');
+		output.innerHTML="sdsadsadsad"+file;
+		var reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function(e) {
+			var img =document.querySelector('#img');
+			img.src = this.result;
+			console.log(this.result);
+			output.innerHTML=this.result;
+		};
 	}
+
+
 </script>
 </body>
 </html>
