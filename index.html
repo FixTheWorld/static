@@ -1,35 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
-	<title>Title</title>
-	<style>
-	</style>
+	<meta charset="utf-8">
+	<title>JS Bin</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/jSignature.min.js"></script>
 </head>
-<body>
-	<a href="./test.pdf" download="w3logo">下载</a>
-	<label for="input1">capture="camera"</label>
-	<input id="input1" multiple onchange="preview(event);" type="file" capture="camera" />
 
-	<label for="input2">accept='image / *;capture=camera'</label>
-	<input id="input2" multiple onchange="preview(event);" type="file" accept="image/*;capture=camera" />
-	<div id="output"></div>
-	<img id="img" src="" />
+<body>
+<div id="signature"></div>
 <script type="text/javascript">
-	function preview(e){
-		const file=e.target.files[0];
-		const output=document.querySelector('#output');
-		output.innerHTML="sdsadsadsad"+file;
-		var reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = function(e) {
-			var img =document.querySelector('#img');
-			img.src = this.result;
-			console.log(this.result);
-			output.innerHTML=this.result;
-		};
-	}
+	$("#signature").jSignature({color:"#12b2ff",lineWidth:5});
 </script>
 </body>
 </html>
