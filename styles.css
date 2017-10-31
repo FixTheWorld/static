@@ -276,3 +276,7 @@ button {
     font-size: 3rem;
     color: #ff8111;
     animation: rotate-reverse 1s linear infinite; }
+.cj-image {
+  overflow: auto; }
+  .cj-image img {
+    width: 200px; }
